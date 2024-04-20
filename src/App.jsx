@@ -3,9 +3,9 @@ import Welcome from "./components/Welcome";
 import Support from "./components/Support";
 import ListCast from "./components/ListCast";
 import Modal from "./components/Modals";
+import Nav from "./components/Nav"
 
 function App() {
-  const name = "StarGazers";
   // move the cast state to the App component
   const [cast, setCast] = useState([]);
   let [memberInfo, setMemberInfo] = useState(null);
@@ -21,6 +21,8 @@ function App() {
 
 
   return (
+    <>
+    <Nav cast={cast} onChoice={(member)=> setMemberInfo(member)} />
     <div className="container">
       <hgroup>
         <img src="images/group.svg" alt="StarGazers Group" />
@@ -44,6 +46,7 @@ function App() {
         <Support />
       </hgroup>
     </div>
+    </>
   );
 }
 export default App;
