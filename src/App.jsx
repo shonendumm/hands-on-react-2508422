@@ -3,6 +3,7 @@ import Welcome from "./components/Welcome";
 import Support from "./components/Support";
 import ListCast from "./components/ListCast";
 import InfoSection from "./components/InfoSection";
+import Modal from "./components/Modals";
 
 function App() {
   const name = "StarGazers";
@@ -23,7 +24,12 @@ function App() {
             setMemberInfo(info);
           }}
         />
-        {memberInfo && <InfoSection memberInfo={memberInfo} />}
+        {memberInfo && (
+          <Modal
+            memberInfo={memberInfo}
+            handleClose={() => setMemberInfo(null)}
+          />
+        )}
         <Support />
       </hgroup>
     </div>
