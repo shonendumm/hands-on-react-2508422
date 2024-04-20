@@ -1,14 +1,8 @@
 export default ({ memberInfo, handleClose }) => {
   return (
     <dialog id="modal-memberInfo" open>
-      <article>
-        <a
-          href="#close"
-          aria-label="Close"
-          className="close"
-          data-target="modal-memberInfo"
-          onClick={handleClose}
-        ></a>
+      <article style={{ paddingTop: "1.8rem" }}>
+        <button aria-label="Close" rel="prev" onClick={handleClose}></button>
         <hgroup>
           <div
             style={{
@@ -22,7 +16,7 @@ export default ({ memberInfo, handleClose }) => {
               alt={memberInfo.name}
             />
             <hgroup>
-              <h1>{memberInfo.name}</h1>
+              <h1 style={{marginBottom:"1rem"}}>{memberInfo.name}</h1>
               <p>{memberInfo.bio}</p>
             </hgroup>
           </div>
