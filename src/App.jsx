@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Welcome from "./components/Welcome";
 import Support from "./components/Support";
 import ListCast from "./components/ListCast";
@@ -7,7 +7,19 @@ import Modal from "./components/Modals";
 
 function App() {
   const name = "StarGazers";
+  // move the cast state to the App component
+  const [cast, setCast] = useState([]);
   let [memberInfo, setMemberInfo] = useState(null);
+  
+  async function fetchCast() {
+    const response = await fetch('cast.json');
+    setCast(await response.json());
+  }
+
+  useEffect(() => {
+    fetchCast();
+  });
+
 
   return (
     <div className="container">
@@ -19,7 +31,7 @@ function App() {
           and benevolence among all species. They are known for their enthusiasm
           for science, for their love of fun, and their dedication to education.
         </p>
-        <ListCast
+        <ListCast cast={cast}
           onChoice={(info) => {
             setMemberInfo(info);
           }}

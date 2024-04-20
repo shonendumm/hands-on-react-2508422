@@ -1,17 +1,5 @@
-import { useState, useEffect } from "react";
-
-export default ({onChoice}) => {
-  const [cast, setCast] = useState([]);
-
+export default ({cast, onChoice}) => {
   
-  async function fetchCast() {
-    const response = await fetch('cast.json');
-    setCast(await response.json());
-  }
-
-  useEffect(() => {
-    fetchCast();
-  });
 
   return (
     <div style={{
