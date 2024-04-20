@@ -1,4 +1,8 @@
-export default ({ memberInfo, handleClose }) => {
+export default ({ memberInfo, handleClose, handleBackward, handleForward }) => {
+
+  
+
+
   return (
     <dialog id="modal-memberInfo" open>
       <article style={{ paddingTop: "1.8rem" }}>
@@ -21,6 +25,8 @@ export default ({ memberInfo, handleClose }) => {
             </hgroup>
           </div>
         </hgroup>
+      <button aria-label="Backward" onClick={()=> handleBackward(memberInfo.id)}>&lt;</button>
+      <button aria-label="Forward" onClick={()=> handleForward(memberInfo.id)}>&gt;</button>
       </article>
     </dialog>
   );

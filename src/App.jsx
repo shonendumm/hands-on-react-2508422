@@ -40,7 +40,9 @@ function App() {
         {memberInfo && (
           <Modal
             memberInfo={memberInfo}
-            handleClose={() => setMemberInfo(null)}
+            handleClose={() => {setMemberInfo(null)}}
+            handleBackward={(memberID) => {setMemberInfo(cast[memberID-1])}}
+            handleForward={(memberID) => {setMemberInfo(cast[memberID+1])}}
           />
         )}
         <Support />
