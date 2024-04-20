@@ -39,6 +39,7 @@ function App() {
         />
         {memberInfo && (
           <Modal
+            cast={cast}
             memberInfo={memberInfo}
             handleClose={() => {setMemberInfo(null)}}
             handleBackward={(memberID) => {setMemberInfo(cast[memberID-1])}}

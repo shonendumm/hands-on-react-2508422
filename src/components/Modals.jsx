@@ -1,7 +1,10 @@
-export default ({ memberInfo, handleClose, handleBackward, handleForward }) => {
+export default ({ cast, memberInfo, handleClose, handleBackward, handleForward }) => {
 
-  
-
+  // To do cycling through the cast members for forward
+  const moveForward = (memberID) => {
+    const nextIndex = (memberID + 1) % cast.length - 1;
+    handleForward(nextIndex);
+  }
 
   return (
     <dialog id="modal-memberInfo" open>
@@ -26,7 +29,7 @@ export default ({ memberInfo, handleClose, handleBackward, handleForward }) => {
           </div>
         </hgroup>
       <button aria-label="Backward" onClick={()=> handleBackward(memberInfo.id)}>&lt;</button>
-      <button aria-label="Forward" onClick={()=> handleForward(memberInfo.id)}>&gt;</button>
+      <button aria-label="Forward" onClick={()=> moveForward(memberInfo.id)}>&gt;</button>
       </article>
     </dialog>
   );
