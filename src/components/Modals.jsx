@@ -37,8 +37,11 @@ export default ({ cast, memberInfo, handleClose, handleBackward, handleForward }
             </hgroup>
           </div>
         </hgroup>
+      <div style={{display: "flex", justifyContent:"center"}}>
       <button aria-label="Backward" onClick={()=> moveBackward(memberInfo.id)}>&lt;</button>
+      <div style={{width:"3rem"}}></div>
       <button aria-label="Forward" onClick={()=> moveForward(memberInfo.id)}>&gt;</button>
+      </div>
       </article>
     </dialog>
   );
