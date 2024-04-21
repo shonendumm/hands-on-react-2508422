@@ -1,5 +1,5 @@
 :root {
-    --primary: rgb(255, 79, 108);
+    --primary: hotpink;
 }
 
 
@@ -7,3 +7,6 @@ h1, b {
     color: var(--primary);
 }
 
+button {
+    color: var(--primary);
+}

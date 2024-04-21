@@ -14,7 +14,7 @@ nav details li a {
 
 details[role="list"] summary + ul li a:hover {
     cursor: pointer;
-    color: red;
+    color: var(--primary);
     font-weight: 700;
     text-decoration: none;
 }
