@@ -1,3 +1,5 @@
+import "./Nav.css"
+
 export default ({ cast, onChoice }) => {
   return (
     <nav className="container">
@@ -7,9 +9,9 @@ export default ({ cast, onChoice }) => {
             <summary aria-haspopup="listbox" role="link" style={{margin:0}}>
               Cast
             </summary>
-            <ul role="listbox" style={{display: "flex", flexDirection: "column", position: "absolute", backgroundColor: "white", zIndex:1, paddingBottom:"1rem"}}>
+            <ul role="listbox" style={{display: "flex", flexDirection: "column", position: "absolute", backgroundColor: "white", zIndex:1}}>
               {cast.map((member) => (
-                <li key={member.id} style={{height:"1rem"}}>
+                <li key={member.id}>
                   <a
                     onClick={() => {
                       onChoice(member);

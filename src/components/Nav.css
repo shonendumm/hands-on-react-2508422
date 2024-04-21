@@ -1,0 +1,20 @@
+nav ul li, nav ul li a {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+nav summary + ul li {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+nav details li a {
+    font-size: 1em;
+}
+
+details[role="list"] summary + ul li a:hover {
+    cursor: pointer;
+    color: red;
+    font-weight: 700;
+    text-decoration: none;
+}
