@@ -1,5 +1,15 @@
 export default ({ cast, memberInfo, handleClose, handleChange }) => {
 
+  const makeChange = (memberId) => {
+    if (memberId < 0) {
+      memberId = cast.length + memberId;
+    }
+    if (memberId >= cast.length) {
+      memberId = memberId % cast.length;
+    }
+    handleChange(memberId);
+  }
+
 
   return (
     <dialog id="modal-memberInfo" open>
@@ -22,10 +32,10 @@ export default ({ cast, memberInfo, handleClose, handleChange }) => {
               <p>{memberInfo.bio}</p>
               <hgroup>
                 <a href="#" className="outline" role="button"
-                onClick={() => handleChange(Number(memberInfo.id) - 1)}
+                onClick={() => makeChange(Number(memberInfo.id) - 1)}
                 >&lt;</a>
               <a href="#" className="outline" role="button"
-              onClick={() => handleChange(Number(memberInfo.id) + 1)}
+              onClick={() => makeChange(Number(memberInfo.id) + 1)}
               >&gt;</a>
               </hgroup>
             </hgroup>
