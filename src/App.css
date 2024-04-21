@@ -1,4 +1,9 @@
+:root {
+    --primary: rgb(255, 79, 108);
+}
+
+
 h1, b {
-    color: red;
+    color: var(--primary);
 }
 
