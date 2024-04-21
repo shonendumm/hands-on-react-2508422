@@ -2,8 +2,17 @@ export default ({ cast, memberInfo, handleClose, handleBackward, handleForward }
 
   // To do cycling through the cast members for forward
   const moveForward = (memberID) => {
-    const nextIndex = (memberID + 1) % cast.length - 1;
+    const nextIndex = (memberID + 1) % cast.length; // else it skips
     handleForward(nextIndex);
+  }
+  const moveBackward = (memberID) => {
+    let nextIndex = memberID;
+    if (nextIndex === 0) {
+      nextIndex = cast.length - 1
+    } else {
+      nextIndex = memberID - 1; 
+    }
+    handleBackward(nextIndex);
   }
 
   return (
@@ -28,7 +37,7 @@ export default ({ cast, memberInfo, handleClose, handleBackward, handleForward }
             </hgroup>
           </div>
         </hgroup>
-      <button aria-label="Backward" onClick={()=> handleBackward(memberInfo.id)}>&lt;</button>
+      <button aria-label="Backward" onClick={()=> moveBackward(memberInfo.id)}>&lt;</button>
       <button aria-label="Forward" onClick={()=> moveForward(memberInfo.id)}>&gt;</button>
       </article>
     </dialog>

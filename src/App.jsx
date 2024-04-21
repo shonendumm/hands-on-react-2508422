@@ -42,8 +42,8 @@ function App() {
             cast={cast}
             memberInfo={memberInfo}
             handleClose={() => {setMemberInfo(null)}}
-            handleBackward={(memberID) => {setMemberInfo(cast[memberID-1])}}
-            handleForward={(memberID) => {setMemberInfo(cast[memberID+1])}}
+            handleBackward={(memberID) => {setMemberInfo(cast[memberID])}}
+            handleForward={(memberID) => {setMemberInfo(cast[memberID])}}
           />
         )}
         <Support />
