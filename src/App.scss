@@ -1,4 +1,7 @@
-@import "@picocss/pico";
+// Refer to Pico SASS guide at https://picocss.com/docs/sass for more details
+@use "@picocss/pico/scss/pico" with (
+  $theme-color: "violet"
+);
 
 :root {
     --primary: hotpink;
