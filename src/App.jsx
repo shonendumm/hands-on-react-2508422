@@ -4,7 +4,7 @@ import Support from "./components/Support";
 import ListCast from "./components/ListCast";
 import Modal from "./components/Modals";
 import Nav from "./components/Nav"
-import "./App.css";
+import "./App.scss";
 
 function App() {
   // move the cast state to the App component

@@ -1,4 +1,6 @@
-/* :root {
+@import "@picocss/pico";
+
+:root {
     --primary: hotpink;
 }
 
@@ -9,4 +11,4 @@ h1, b {
 
 button {
     color: var(--primary);
-} */
+} 
