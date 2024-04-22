@@ -3,7 +3,7 @@ export default ({ cast, memberInfo, handleClose, handleChange }) => {
   // To do cycling through the cast members for forward
   const actChange = (memberID) => {
     let nextIndex = memberID;
-    if (nextIndex === 0) {
+    if (nextIndex <= 0) {
       nextIndex = cast.length - 1
     } 
     if (nextIndex >= cast.length) {
