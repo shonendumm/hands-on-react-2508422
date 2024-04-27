@@ -31,13 +31,17 @@ export default ({ cast, memberInfo, handleClose, handleChange }) => {
             <hgroup>
               <h1 style={{marginBottom:"1rem"}}>{memberInfo.name}</h1>
               <p>{memberInfo.bio}</p>
+                <hgroup style={{display: "flex", justifyContent:"center", gap:"1rem", marginTop:"1rem"}}>
+                  <button aria-label="Backward" className="outline" onClick={()=> actChange(Number(memberInfo.id)-1)}>
+                    <span class="material-symbols-outlined">arrow_back</span>
+                  </button>
+                
+                  <button aria-label="Forward" className="outline" onClick={()=> actChange(Number(memberInfo.id)+1)}>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </hgroup>
             </hgroup>
           </div>
-      <div style={{display: "flex", justifyContent:"center"}}>
-      <button aria-label="Backward" className="outline" onClick={()=> actChange(Number(memberInfo.id)-1)}>&lt;</button>
-      <div style={{width:"2rem"}}></div>
-      <button aria-label="Forward" className="outline" onClick={()=> actChange(Number(memberInfo.id)+1)}>&gt;</button>
-      </div>
         </hgroup>
       </article>
     </dialog>

@@ -3,6 +3,11 @@ nav ul li, nav ul li a {
     padding-bottom: 0.5em;
 }
 
+nav summary {
+    font-family: "Bungee";
+}
+
+
 nav summary + ul li {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
