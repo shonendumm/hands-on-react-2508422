@@ -1,41 +1,49 @@
-export default ({ member, handleClose, handleChange }) => {
+export default ({ cast, memberInfo, handleClose, handleChange }) => {
+
+  // To do cycling through the cast members for forward
+  const actChange = (memberID) => {
+    let nextIndex = memberID;
+    if (nextIndex <= 0) {
+      nextIndex = cast.length - 1
+    } 
+    if (nextIndex >= cast.length) {
+      nextIndex = nextIndex % cast.length; 
+    }
+    handleChange(nextIndex);
+  }
+
   return (
-    <dialog id="modal-member" open>
-      <article>
-        <a href="#close"
-          aria-label="Close"
-          className="close"
-          data-target="modal-member"
-          onClick={handleClose}
-        ></a>
+    <dialog id="modal-memberInfo" open>
+      <article style={{ paddingTop: "1.8rem" }}>
+        <button aria-label="Close" rel="prev" onClick={handleClose}></button>
         <hgroup>
-          <div style={{
-            display: "flex",
-            gap: '1rem'
-          }}>
-            <img style={{ width: '200px' }}
-              src={`images/${member.slug}.svg`}
-              alt={member.name} />
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+            }}
+          >
+            <img
+              style={{ width: "200px" }}
+              src={`images/${memberInfo.slug}.svg`}
+              alt={memberInfo.name}
+            />
             <hgroup>
-              <h1>{member.name}</h1>
-              <p>{member.bio}</p>
-              <hgroup style={{
-                display: "flex",
-                gap: "1rem",
-                marginTop: "1rem",
-                justifyContent: "space-between"
-              }}>
-                <a className="outline" href="#" role="button"
-                  onClick={() => { handleChange(Number(member.id) - 1) }}
-                ><span className="material-symbols-outlined">arrow_back</span></a>
-                <a className="outline" href="#" role="button"
-                  onClick={() => { handleChange(Number(member.id) + 1) }}
-                ><span className="material-symbols-outlined">arrow_forward</span></a>
-              </hgroup>
+              <h1 style={{marginBottom:"1rem"}}>{memberInfo.name}</h1>
+              <p>{memberInfo.bio}</p>
+                <hgroup style={{display: "flex", justifyContent:"center", gap:"1rem", marginTop:"1rem"}}>
+                  <button aria-label="Backward" className="outline" onClick={()=> actChange(Number(memberInfo.id)-1)}>
+                    <span class="material-symbols-outlined">arrow_back</span>
+                  </button>
+                
+                  <button aria-label="Forward" className="outline" onClick={()=> actChange(Number(memberInfo.id)+1)}>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </hgroup>
             </hgroup>
           </div>
         </hgroup>
       </article>
     </dialog>
-  )
-}
+  );
+};

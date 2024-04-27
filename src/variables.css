@@ -1,0 +1,30 @@
+/* Deep-purple Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --pico-primary: #5e35b1;
+  --pico-primary-hover: #512da8;
+  --pico-primary-focus: rgba(94, 53, 177, 0.125);
+  --pico-primary-inverse: #FFF;
+}
+
+/* Deep-purple Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --pico-primary: #5e35b1;
+    --pico-primary-hover: #673ab7;
+    --pico-primary-focus: rgba(94, 53, 177, 0.25);
+    --pico-primary-inverse: #FFF;
+  }
+}
+
+/* Deep-purple Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+  --pico-primary: #5e35b1;
+  --pico-primary-hover: #673ab7;
+  --pico-primary-focus: rgba(94, 53, 177, 0.25);
+  --pico-primary-inverse: #FFF;
+}
+

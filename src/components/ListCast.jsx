@@ -1,4 +1,6 @@
-export default ({ cast, onChoice }) => {
+export default ({cast, onChoice}) => {
+  
+
   return (
     <div style={{
       display: "grid",
@@ -8,7 +10,7 @@ export default ({ cast, onChoice }) => {
     }}>
       {
         cast.map(member => (
-          <a onClick={() => { onChoice(member) }} key={member.id} data-tooltip={member.name}>
+          <a onClick={() => {onChoice(member)}} key={member.id} data-tooltip={member.name}>
             <img src={`images/${member.slug}_tn.svg`} alt={member.name} />
           </a>
         ))
