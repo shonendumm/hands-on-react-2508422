@@ -3,7 +3,9 @@
   $theme-color: "violet"
 );
 
-
+body {
+    font-family: "Poppins", sans-serif;
+}
 
 
 :root {
@@ -13,6 +15,7 @@
 
 h1, b {
     color: var(--primary);
+    font-family: "Bungee", sans-serif;
 }
 
 button {
